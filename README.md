@@ -81,24 +81,13 @@ A background service that fetches financial news from Polygon.io every hour, sto
 
 ## Two Architecture Options
 
-### 1. Monolithic Architecture
+### Monolithic Architecture
 
-A single application containing:
+A single application that includes all functionality in one codebase, making it simpler to start but harder to scale or maintain.
 
-- User management
-- News API
-- Subscription logic
-- Background fetching
-- Integration with external APIs
+### Microservices-Based Architecture
 
-### 2. Microservices-Based Architecture
-
-Separate services for clear responsibility:
-
-- `JwtUsers`: Authentication, JWT issuing, and subscriptions
-- `NewsApi`: Exposes secure/public endpoints for querying news
-- `NewsFetcherService`: Background task that fetches and stores news
-- (Future additions: API Gateway, Message Bus, Caching, etc.)
+An approach where each functionality is split into separate, independently deployable services for better scalability and modularity.
 
 ### Comparison Table
 
