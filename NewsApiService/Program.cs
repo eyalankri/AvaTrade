@@ -10,6 +10,12 @@ using News.Contracts.Entities;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.WebHost.ConfigureKestrel(options =>
+{
+    options.ListenLocalhost(7200, o => o.UseHttps());
+});
+
+
 // Load JWT settings
 var jwtConfig = builder.Configuration.GetSection("JwtSettings").Get<JwtSettings>();
 

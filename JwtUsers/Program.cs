@@ -9,6 +9,12 @@ using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.WebHost.ConfigureKestrel(options =>
+{
+    options.ListenLocalhost(7052, o => o.UseHttps());
+});
+
+
 // Load JWT config
 var jwtConfig = builder.Configuration.GetSection("JwtSettings").Get<JwtSettings>();
 
@@ -55,6 +61,8 @@ builder.Services.AddSwaggerGen(options =>
         In = ParameterLocation.Header,
         Description = "Enter your JWT token in the format **Bearer &lt;token&gt;**"
     });
+
+
 
     options.AddSecurityRequirement(new OpenApiSecurityRequirement
     {
