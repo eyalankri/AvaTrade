@@ -31,10 +31,10 @@ public class NewsController : ControllerBase
         return Ok(news);
     }
 
-    [HttpGet("instrument/{name}")]
-    public async Task<IActionResult> GetByInstrument(string name, [FromQuery] int limit = 10)
+    [HttpGet("instrument/{ticker}")]
+    public async Task<IActionResult> GetByInstrument(string ticker, [FromQuery] int limit = 10)
     {
-        var news = await _newsService.GetByTickerAsync(name, limit);
+        var news = await _newsService.GetByTickerAsync(ticker, limit);
         return Ok(news);
     }
 
