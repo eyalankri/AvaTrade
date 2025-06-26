@@ -17,7 +17,7 @@ This project is a simplified microservices-based news aggregation system, design
 
 ### Prerequisites
 
-- [.NET 7 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/7.0)
+- [.NET 8 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
 - Swagger UI is used for testing (no frontend needed)
 
 ### Run
