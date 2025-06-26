@@ -1,7 +1,5 @@
 ﻿using Common.Repositories;
-using MassTransit;
 using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
 
 namespace Common.Sqlite
 {

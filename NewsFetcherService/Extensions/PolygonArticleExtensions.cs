@@ -22,7 +22,7 @@ public static class PolygonArticleExtensions
             Sentiment = article.Insights?.FirstOrDefault()?.Sentiment,
             SentimentReasoning = article.Insights?.FirstOrDefault()?.Sentiment_Reasoning,
             PublishedAt = article.Published_Utc,
-            DateCreated = DateTimeOffset.UtcNow,
+            DateCreated = DateTime.UtcNow,
             RawJson = System.Text.Json.JsonSerializer.Serialize(article)
         };
     }
