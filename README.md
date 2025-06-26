@@ -129,5 +129,5 @@ Use **microservices** for the long-term benefits in scalability, maintainability
 | Architecture + documentation               | 2.5h     |
 | Final review + polish                      | 1h       |
 
-**Total: \~14 hours**
+**Total: \~12 hours**
 
