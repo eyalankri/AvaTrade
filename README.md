@@ -9,8 +9,9 @@ This project is a simplified microservices-based news aggregation system, design
 - **JwtUsers** – Manages user registration, login, and JWT issuance. Also includes a subscription endpoint that updates the user's `NewSubscription` flag using their token.
 - **NewsApi** – Serves authorized endpoints to query news data (by date, ticker, text, etc.). Also includes a public endpoint for the latest news.
 - **NewsFetcherService** – Background worker that fetches external news articles from Polygon.io every hour and persists new ones.
-- **Common** – Shared interfaces (e.g., `IRepository<T>`), models (e.g., `NewsItem`), and extensions.
-- **/db folder** – Contains local `.db` files for SQLite used by each service.
+- **News.Contracts** – Shared NuGet package that contains the `NewsItem` model. Used to share structure between `NewsApi` and `NewsFetcherService` without tight coupling.
+- **Common** – Shared interfaces (e.g., `IRepository<T>`), extensions, and utility code.
+- **/db folder** – Contains local `.db` files for SQLite used by each service. For simplicity, the `News` table is flattened and denormalized to avoid introducing relational joins in this version.
 
 ## Run Instructions
 
